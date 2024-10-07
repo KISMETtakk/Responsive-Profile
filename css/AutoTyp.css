@@ -112,3 +112,65 @@
     height: 24px;
   }
 }
+
+.custom-grid-list-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.custom-about-block {
+  padding: 10px;
+}
+
+.custom-about-block-title {
+  font-size: 18px;
+  color: black;
+  border-left: 3px solid red;
+  padding-left: 10px;
+}
+
+.custom-about-list {
+  list-style: none;
+  padding: 0;
+}
+
+.custom-about-list li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+.custom-editable-field {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 60%;
+  background: transparent;
+}
+
+.custom-edit-icon {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  margin-left: 10px;
+}
+
+.custom-editable-field[readonly] {
+  background-color: #f0f0f0;
+}
+
+.custom-editable-field:focus {
+  outline: none;
+  border-bottom: 2px solid red;
+}
+
+.custom-edit-icon i {
+  font-size: 16px;
+  color: red;
+}
+
+.custom-edit-icon i:hover {
+  color: green;
+}

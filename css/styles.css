@@ -4289,7 +4289,7 @@ td:last-child {
     height         : var(--vspace-1_75);
     width          : var(--vspace-1_75);
     border-radius  : 50%;
-    border         : 2px solid white;
+    border         : 2px solid rgb(48, 48, 48);
     margin-right   : var(--vspace-0_75);
     position       : relative;
 }
@@ -4300,7 +4300,7 @@ td:last-child {
 }
 
 .ss-go-top svg path {
-    fill: white;
+    fill: rgb(0, 0, 0);
 }
 
 /* ------------------------------------------------------------------- 

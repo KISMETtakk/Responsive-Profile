@@ -74,6 +74,8 @@
 
     }; // end ssMoveHeader
 
+    
+
 
    /* mobile menu
     * ---------------------------------------------------- */ 
@@ -309,6 +311,9 @@
         reader.readAsDataURL(file);
     }
 });
+
+
+
     (function ssInit() {
 
         ssPreloader();

@@ -24,6 +24,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   </head>
 
   <body id="top">
@@ -202,74 +203,76 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit. Ut enim ad minim     
                     </p> -->
 
-            <div class="grid-list-items s-about__blocks">
-              <div class="grid-list-items__item s-about__block">
-                <h4 class="s-about__block-title">Overview</h4>
-                <ul class="s-about__list">
-                  <li>
-                    Name
-                    <span>Tshiamo</span>
-                  </li>
-                  <li>
-                    Surname
-                    <span>Matiza</span>
-                  </li>
-                  <li>
-                    Email
-                    <span>tmatiza19@gmail.com</span>
-                  </li>
-                  <li>
-                    Student Number
-                    <span>221306520</span>
-                  </li>
-                  <li>
-                    Faculty
-                    <span>ICT</span>
-                  </li>
-                  <li>
-                    Campus
-                    <span>Soshanguve South</span>
-                  </li>
-                </ul>
-              </div>
-              <!--end s-about__block -->
-
-              <div class="grid-list-items__item s-about__block">
-                <h4 class="s-about__block-title">Addition Information</h4>
-
-                <ul class="s-about__list">
-                  <li>
-                    <a href="#0">
-                      Site Of The Month
-                      <span>Awwwards — 2023</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#0">
-                      Site Of The Day
-                      <span>Awwwards — 2023</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#0">
-                      Agency of The Year
-                      <span>Awwwards — 2022</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#0">
-                      FWA of The Month
-                      <span>FWA — 2022</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#0">
-                      Site Of The Month
-                      <span>Awwwards — 2022</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+                    <div class="custom-grid-list-items custom-about-blocks">
+                      <div class="custom-grid-list-items__item custom-about-block">
+                        <h4 class="custom-about-block-title">Overview</h4>
+                        <ul class="custom-about-list">
+                          <li>
+                            Name
+                            <input type="text" value="Tshiamo" class="custom-editable-field" readonly />
+                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
+                          </li>
+                          <li>
+                            Surname
+                            <input type="text" value="Matiza" class="custom-editable-field" readonly />
+                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
+                          </li>
+                          <li>
+                            Email
+                            <input type="email" value="tmatiza19@gmail.com" class="custom-editable-field" readonly />
+                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
+                          </li>
+                          <li>
+                            Student Number
+                            <input type="text" value="221306520" class="custom-editable-field" readonly />
+                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
+                          </li>
+                          <li>
+                            Faculty
+                            <input type="text" value="ICT" class="custom-editable-field" readonly />
+                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
+                          </li>
+                          <li>
+                            Campus
+                            <input type="text" value="Soshanguve South" class="custom-editable-field" readonly />
+                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
+                          </li>
+                        </ul>
+                      </div>
+                      <!--end custom-about-block -->
+                    
+                      <div class="custom-grid-list-items__item custom-about-block">
+                        <h4 class="custom-about-block-title">Additional Information</h4>
+                        <ul class="custom-about-list">
+                          <li>
+                            Site Of The Month
+                            <input type="text" value="Awwwards — 2023" class="custom-editable-field" readonly />
+                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
+                          </li>
+                          <li>
+                            Site Of The Day
+                            <input type="text" value="Awwwards — 2023" class="custom-editable-field" readonly />
+                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
+                          </li>
+                          <li>
+                            Agency of The Year
+                            <input type="text" value="Awwwards — 2022" class="custom-editable-field" readonly />
+                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
+                          </li>
+                          <li>
+                            FWA of The Month
+                            <input type="text" value="FWA — 2022" class="custom-editable-field" readonly />
+                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
+                          </li>
+                          <li>
+                            Site Of The Month
+                            <input type="text" value="Awwwards — 2022" class="custom-editable-field" readonly />
+                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    
               <!--end s-about__block -->
 
 
