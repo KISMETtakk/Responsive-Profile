@@ -45,7 +45,7 @@
   position: absolute;
   left: 0;
   height: 110%;
-  width: 95%;
+  width: 105%;
   background: #eceeec;
   border-left: 4px solid #2c2c2c;
   animation: typing 5s steps(20) infinite;
@@ -57,5 +57,58 @@
   }
   100% {
     left: 0;
+  }
+}
+.s-intro__content {
+  position: relative; /* Ensure positioning context */
+  z-index: -10; /* Moves the content behind other elements */
+}
+
+.s-intro__content-inner {
+  position: relative; /* Ensure it's in the same context as its parent */
+}
+
+.s-intro__content-text {
+  position: relative; /* Ensure the text also respects the z-index */
+}
+
+.confirm-info-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+  padding: 10px;
+ 
+  width: 220px;
+}
+
+.confirm-text {
+  font-size: 21px;    
+  text-align: center;
+  color: hsla(0, 0%, 10%, 1); /* White text */
+}
+
+.graduation-icon {
+  width: 30px;
+  height: 30px;
+  background-image: url('graduation-cap-icon.png'); /* Replace with your actual graduation cap icon */
+  background-size: cover;
+  margin-left: 10px;
+}
+
+/* For responsiveness */
+@media (max-width: 575.98px) {
+  .confirm-info-box {
+    width: 180px; /* Adjust width for smaller screens */
+  }
+
+  .confirm-text {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .graduation-icon {
+    width: 24px;
+    height: 24px;
   }
 }

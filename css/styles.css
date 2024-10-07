@@ -1,79 +1,6 @@
 @charset "UTF-8";
 
-/* =================================================================== 
- * Hudson Main Stylesheet
- * Template Ver. 1.0.0
- * 04-03-2023
- * ------------------------------------------------------------------
- *
- * TOC:
- * # SETTINGS
- *      ## fonts 
- *      ## colors
- *      ## spacing and typescale
- *      ## grid variables
- * # CSS RESET
- * # GRID
- * # BASE SETUP
- * # UTILITY CLASSES
- * # TYPOGRAPHY 
- *      ## base type styles
- *      ## additional typography & helper classes
- *      ## lists
- *      ## media 
- *      ## spacing
- * # PRELOADER
- *      ## page loaded
- * # FORM 
- *      ## style placeholder text
- * # BUTTONS
- * # TABLE
- * # COMPONENTS
- *      ## pagination
- *      ## alert box 
- *      ## skillbars
- *      ## stats tabs
- * # PROJECT-WIDE SHARED STYLES
- *      ## section header
- *      ## social list
- *      ## swiper overrides
- *      ## glightbox overrides
- * # GRID-BASED LAYOUTS
- *      ## grid block
- *      ## list grid
- * # PAGE WRAP
- * # SITE HEADER
- *      ## logo
- *      ## main navigation
- *      ## mobile menu toggle
- * # INTRO
- *      ## intro content
- *      ## intro btn cv download
- *      ## intro social
- *      ## intro scroll down
- *      ## intro transitions
- * # ABOUT
- *      ## about blocks
- * # WORKS
- *      ## folio entries 
- *      ## testimonials
- * # NUMBERS
- * # FOOTER
- *      ## copyright
- *      ## go top
- *
- * ------------------------------------------------------------------ */
 
-
-/* ===================================================================
- * # SETTINGS
- *
- *
- * ------------------------------------------------------------------- */
-
-/* ------------------------------------------------------------------- 
- * ## fonts 
- * ------------------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 :root {
@@ -3074,7 +3001,9 @@ td:last-child {
     position        : fixed;
     top             : 0;
     left            : 0;
+    
 }
+
 
 .s-header.sticky .s-header__inner {
     --width-grid-max: var(--width-default);
@@ -3091,8 +3020,7 @@ td:last-child {
 .s-header__inner {
     height          : var(--header-height);
     align-items     : center;
-    justify-content : space-between;
-    background-color: var(--color-3);
+    justify-content : space-between;   
     border          : 1px solid rgba(255, 255, 255, 0.03);
     padding         : 0 var(--gutter);
     box-shadow      : var(--box-shadow);
@@ -3373,12 +3301,12 @@ td:last-child {
     --content-padding-top   : max(20rem, 18vh);
     --content-padding-bottom: 8rem;
     --content-min-height    : calc(var(--vspace-1) * 27);
-    z-index                 : 2;
-    background-color        : var(--color-gray-10);
+    z-index                 : 2;    
     width                   : 100%;
     height                  : max(var(--content-min-height), 100vh);
     overflow                : hidden;
     position                : relative;
+    background-color        : var(--color-gray-10);
 }
 
 /* --------------------------------------------------------------------
@@ -3714,6 +3642,7 @@ td:last-child {
     .s-intro__scroll-down {
         right: var(--gutter);
     }
+    
 }
 
 @media screen and (max-width: 1200px) {
@@ -3732,7 +3661,13 @@ td:last-child {
     }
 }
 
+
 @media screen and (max-width: 1080px) {
+    .confirm-info-box .confirm-text {
+        color: #fff; /* Changes text color to white */
+        transition: 1s;
+      }
+
     .s-intro {
         --content-padding-top   : max(12rem, 16vh);
         --content-padding-bottom: 9.6rem;
@@ -4202,7 +4137,6 @@ td:last-child {
  * ------------------------------------------------------------------- */
 .s-footer {
     --bottom-padding: var(--vspace-2_5);
-    background-color: var(--color-3);
     margin-top      : auto;
     padding-top     : var(--vspace-6);
     padding-bottom  : var(--bottom-padding);
@@ -4236,9 +4170,9 @@ td:last-child {
 }
 
 .s-footer__buttons {
-    --color-btn-stroke           : white;
-    --color-btn-stroke-text      : white;
-    --color-btn-stroke-hover     : white;
+    --color-btn-stroke           : #1a1a1a;
+    --color-btn-stroke-text      : #1a1a1a;
+    --color-btn-stroke-hover     : rgb(240, 240, 240);
     --color-btn-stroke-hover-text: var(--color-text-dark);
     margin-top                   : var(--vspace-0_75);
     margin-bottom                : var(--vspace-2_5);

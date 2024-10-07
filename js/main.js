@@ -298,6 +298,17 @@
 
    /* Initialize
     * ------------------------------------------------------ */
+   document.getElementById('photoUpload').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('uploadedImage').src = e.target.result;
+            document.getElementById('uploadedImage').srcset = e.target.result + ' 1x';
+        };
+        reader.readAsDataURL(file);
+    }
+});
     (function ssInit() {
 
         ssPreloader();
