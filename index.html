@@ -16,7 +16,8 @@
     ================================================== -->
     <link rel="stylesheet" href="css/vendor.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/AutoTyp.css" />
+    <link rel="stylesheet" href="css/autoTyp.css" />
+    <link rel="stylesheet" href="css/multiStepForm.css" />
 
     <!-- favicons
     ================================================== -->
@@ -203,75 +204,259 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit. Ut enim ad minim     
                     </p> -->
 
-                    <div class="custom-grid-list-items custom-about-blocks">
-                      <div class="custom-grid-list-items__item custom-about-block">
-                        <h4 class="custom-about-block-title">Overview</h4>
-                        <ul class="custom-about-list">
-                          <li>
-                            Name
-                            <input type="text" value="Tshiamo" class="custom-editable-field" readonly />
-                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
-                          </li>
-                          <li>
-                            Surname
-                            <input type="text" value="Matiza" class="custom-editable-field" readonly />
-                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
-                          </li>
-                          <li>
-                            Email
-                            <input type="email" value="tmatiza19@gmail.com" class="custom-editable-field" readonly />
-                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
-                          </li>
-                          <li>
-                            Student Number
-                            <input type="text" value="221306520" class="custom-editable-field" readonly />
-                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
-                          </li>
-                          <li>
-                            Faculty
-                            <input type="text" value="ICT" class="custom-editable-field" readonly />
-                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
-                          </li>
-                          <li>
-                            Campus
-                            <input type="text" value="Soshanguve South" class="custom-editable-field" readonly />
-                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
-                          </li>
-                        </ul>
-                      </div>
-                      <!--end custom-about-block -->
+                    <div class="grid-list-items s-about__blocks">
+                      <div class="grid-list-items__item s-about__block">
+                        <div class="step__container">
+                          <!-- -------------- -->
+                          <!-- SIDEBAR -->
+                          <!-- -------------- -->
+                          <div class="sidebar">
+                            <div class="step__indecater">
+                              <div class="indecater__num">1</div>
+                              <div class="indecater__text">
+                                <p class="subtitle">STEP1</p>
+                                <p class="mini__title">Your Info</p>
+                              </div>
+                            </div>
+                            <div class="step__indecater">
+                              <div class="indecater__num 2">2</div>
+                              <div class="indecater__text">
+                                <p class="subtitle">STEP2</p>
+                                <p class="mini__title">Select plan</p>
+                              </div>
+                            </div>
+                            <div class="step__indecater">
+                              <div class="indecater__num 3">3</div>
+                              <div class="indecater__text">
+                                <p class="subtitle">STEP3</p>
+                                <p class="mini__title">Add-ons</p>
+                              </div>
+                            </div>
+                            <div class="step__indecater">
+                              <div class="indecater__num 4">4</div>
+                              <div class="indecater__text">
+                                <p class="subtitle">STEP4</p>
+                                <p class="mini__title">Summary</p>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- form steps container -->
+                          <div class="steps__container">
+                            <!-- step1 -->
+                            <form class="step" id="form">
+                              <h3 class="main__title">Confirm Personal info</h3>
+                              <p class="description">
+                                Please confirm your first name, last name and email address.
+                              </p>
+                              <ul class="list">
+                                <li class="list__item">
+                                  <div class="input__labe">
+                                    <p class="label">First Name</p>
+                                    <p class="warning"></p>
+                                  </div>
+                                  <input
+                                    type="text"
+                                    name="userName"
+                                    class="input"
+                                    placeholder="e.g. Zenzo"
+                                    required />
+                                </li>
+                                <li class="list__item">
+                                  <div class="input__labe">
+                                    <p class="label">Last Name</p>
+                                    <p class="warning"></p>
+                                  </div>
+                                  <input
+                                    type="text"
+                                    name="userName"
+                                    class="input"
+                                    placeholder="e.g. Matiza"
+                                    required />
+                                </li>
+                                <li class="list__item">
+                                  <div class="input__labe">
+                                    <p class="label">Email Address</p>
+                                    <p class="warning"></p>
+                                  </div>
+                                  <input
+                                    type="email"
+                                    name="email"
+                                    class="input"
+                                    placeholder="e.g. stephenking@lorem.com"
+                                    required />
+                                </li>
+                                <li class="list__item">
+                                  <div class="input__labe">
+                                    <p class="label">Phone Number</p>
+                                    <p class="warning"></p>
+                                  </div>
+                                  <input
+                                    type="number"
+                                    name="phone"
+                                    class="input"
+                                    placeholder="e.g. +1 234 567 890"
+                                    required />
+                                </li>
+                              </ul>
+                            </form>
+                            <!-- STEP 2 -->
+                            <div class="step" id="step-2">
+                              <h3 class="main__title">Select your plan</h3>
+                              <p class="description">
+                                You have the option of monthly or yearly billing.
+                              </p>
+                              <div class="plan__card_container" id="plan-cards">
+                                <div class="plan__card card">
+                                  <div class="card__img">
+                                    <img src="./assets/images/icon-arcade.svg" alt="arcade" />
+                                  </div>
+                                  <div class="plan__price">
+                                    <p class="card__name" id="arcade">Arcade</p>
+                                    <p class="card__price">
+                                      $<span class="sbscription__price">00</span>/<span
+                                        class="sbscription__duration"
+                                        >xx</span
+                                      >
+                                    </p>
+                                    <p class="yearly__benefit">2 months free</p>
+                                  </div>
+                                </div>
+                                <div class="plan__card card">
+                                  <div class="card__img">
+                                    <img src="./assets/images/icon-advanced.svg" alt="arcade" />
+                                  </div>
+                                  <div class="plan__price">
+                                    <p class="card__name" id="advance">Advance</p>
+                                    <p class="card__price">
+                                      $<span class="sbscription__price">00</span>/<span
+                                        class="sbscription__duration"
+                                        >xx</span
+                                      >
+                                    </p>
+                                    <p class="yearly__benefit">2 months free</p>
+                                  </div>
+                                </div>
+                                <div class="plan__card card">
+                                  <div class="card__img">
+                                    <img src="./assets/images/icon-pro.svg" alt="arcade" />
+                                  </div>
+                                  <div class="plan__price">
+                                    <p class="card__name" id="pro">Pro</p>
+                                    <p class="card__price">
+                                      $<span class="sbscription__price">00</span>/<span
+                                        class="sbscription__duration"
+                                        >xx</span
+                                      >
+                                    </p>
+                                    <p class="yearly__benefit">2 months free</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <p id="select-plan-error"></p>
+                              <div class="toggle__container">
+                                <!-- "selected__plan" by default selected palan in monthly -->
+                                <p class="monthly__plan selected__plan" id="monthly">Monthly</p>
+                                <div class="toggle">
+                                  <div class="toggle__circle" id="toggle"></div>
+                                </div>
+                                <p class="yearly__plan" id="yearly">Yearly</p>
+                              </div>
+                            </div>
+                            <!-- STEP 3 -->
+                            <div class="step" id="step-3">
+                              <h3 class="main__title">Pick add-ons</h3>
+                              <p class="description">
+                                Add-ons help enhance your gaming experience.
+                              </p>
+                              <div class="addson__card_container">
+                                <div class="addon__card card">
+                                  <input type="checkbox" name="checkbox" id="" class="checkbox" />
+                                  <div class="card__text">
+                                    <p class="card__name">Online service</p>
+                                    <p class="card__description">Access to multiplayer games</p>
+                                  </div>
+                                  <p class="card__price">
+                                    +$<span class="sbscription__price">00</span>/<span
+                                      class="sbscription__duration"
+                                      >xx</span
+                                    >
+                                  </p>
+                                </div>
+                                <div class="addon__card card">
+                                  <input type="checkbox" name="checkbox" id="" class="checkbox" />
+                                  <div class="card__text">
+                                    <p class="card__name">Larger storage</p>
+                                    <p class="card__description">Extra 1TB of cloud save</p>
+                                  </div>
+                                  <p class="card__price">
+                                    +$<span class="sbscription__price">00</span>/<span
+                                      class="sbscription__duration"
+                                      >xx</span
+                                    >
+                                  </p>
+                                </div>
+                                <div class="addon__card card">
+                                  <input type="checkbox" name="checkbox" id="" class="checkbox" />
+                                  <div class="card__text">
+                                    <p class="card__name">Customizable Profile</p>
+                                    <p class="card__description">Custom theme on your profile</p>
+                                  </div>
+                                  <p class="card__price">
+                                    +$<span class="sbscription__price">00</span>/<span
+                                      class="sbscription__duration"
+                                      >xx</span
+                                    >
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- STEP 4 -->
+                            <div class="step" id="step-4">
+                              <h3 class="main__title">Finishing up</h3>
+                              <p class="description">
+                                Double-check everything looks OK before confirming.
+                              </p>
+                              <div class="finishingup__card_container card">
+                                <div class="selected__plan_container">
+                                  <div class="" id="selected-plan"><!-- selected plan --></div>
+                                  <button class="change__plan" id="change-plan">change</button>
+                                </div>
+                                <ul id="selected-addon">
+                                  <!-- selected adds-on -->
+                                </ul>
+                              </div>
+                              <div class="total" id="total">
+                                <!-- total amount -->
+                              </div>
+                            </div>
+                            <!-- last step | thank you -->
+                            <div class="step last__step" id="thank-you">
+                              <div class="final__img">
+                                <img src="./assets/images/icon-thank-you.svg" alt="" />
+                              </div>
+                              <h3 class="main__title">Thank you!</h3>
+                              <p class="description">
+                                Thanks for confirming your subscription! We hope you have fun
+                                using our platform. If you ever need support, please feel free to
+                                email us at support@loremgaming.com.
+                              </p>
+                            </div>
+
+                          </div>
+                        </div>
+                                                    <!-- -------------- -->
+                            <!-- BUTTON -->
+                            <!-- -------------- -->
+                            <div class="button__container">
+                              <button class="button prev__button" id="prev-button">
+                                Go Back
+                              </button>
+                              <button type="submit" class="button next__button" id="next-button">
+                                Next Step
+                              </button>
+                            </div>
+                      </div> 
                     
-                      <div class="custom-grid-list-items__item custom-about-block">
-                        <h4 class="custom-about-block-title">Additional Information</h4>
-                        <ul class="custom-about-list">
-                          <li>
-                            Site Of The Month
-                            <input type="text" value="Awwwards — 2023" class="custom-editable-field" readonly />
-                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
-                          </li>
-                          <li>
-                            Site Of The Day
-                            <input type="text" value="Awwwards — 2023" class="custom-editable-field" readonly />
-                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
-                          </li>
-                          <li>
-                            Agency of The Year
-                            <input type="text" value="Awwwards — 2022" class="custom-editable-field" readonly />
-                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
-                          </li>
-                          <li>
-                            FWA of The Month
-                            <input type="text" value="FWA — 2022" class="custom-editable-field" readonly />
-                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
-                          </li>
-                          <li>
-                            Site Of The Month
-                            <input type="text" value="Awwwards — 2022" class="custom-editable-field" readonly />
-                            <span class="custom-edit-icon" onclick="enableEdit(this)"><i class="fas fa-plus"></i></span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
                     
               <!--end s-about__block -->
 
@@ -329,5 +514,6 @@
     ================================================== -->
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/multiStepForm.js"></script>
   </body>
 </html>
