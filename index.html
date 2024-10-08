@@ -251,12 +251,26 @@
                               <ul class="list">
                                 <li class="list__item">
                                   <div class="input__labe">
+                                    <p class="label">Student Number</p>
+                                    <p class="warning"></p>
+                                  </div>
+                                  <input
+                                  value="221306250"
+                                    type="text"
+                                    name="stuNo"
+                                    class="input"
+                                    readonly
+                                    required />                                    
+                                </li>
+                                <li class="list__item">
+                                  <div class="input__labe">
                                     <p class="label">First Name</p>
                                     <p class="warning"></p>
                                   </div>
                                   <input
+                                  value="Zenzo"
                                     type="text"
-                                    name="userName"
+                                    name="firstName"
                                     class="input"
                                     placeholder="e.g. Zenzo"
                                     required />
@@ -267,8 +281,9 @@
                                     <p class="warning"></p>
                                   </div>
                                   <input
+                                  value="Matiza"
                                     type="text"
-                                    name="userName"
+                                    name="lastName"
                                     class="input"
                                     placeholder="e.g. Matiza"
                                     required />
@@ -279,88 +294,138 @@
                                     <p class="warning"></p>
                                   </div>
                                   <input
+                                  value="tmatiza19@gmail.com"
                                     type="email"
                                     name="email"
                                     class="input"
-                                    placeholder="e.g. stephenking@lorem.com"
-                                    required />
-                                </li>
-                                <li class="list__item">
-                                  <div class="input__labe">
-                                    <p class="label">Phone Number</p>
-                                    <p class="warning"></p>
-                                  </div>
-                                  <input
-                                    type="number"
-                                    name="phone"
-                                    class="input"
-                                    placeholder="e.g. +1 234 567 890"
+                                    placeholder="e.g. tmatiza19@gmail.com"
                                     required />
                                 </li>
                               </ul>
                             </form>
                             <!-- STEP 2 -->
                             <div class="step" id="step-2">
-                              <h3 class="main__title">Select your plan</h3>
+                              <h3 class="main__title">Select your campus</h3>
                               <p class="description">
-                                You have the option of monthly or yearly billing.
+                                Please confirm your campus.
                               </p>
                               <div class="plan__card_container" id="plan-cards">
-                                <div class="plan__card card">
+                                <div class="plan__card card" data-campus-name="Pretoria Campus">
                                   <div class="card__img">
-                                    <img src="./assets/images/icon-arcade.svg" alt="arcade" />
+                                    <img src="./images/TUT-Logo.png" alt="Pretoria Campus" />
                                   </div>
                                   <div class="plan__price">
-                                    <p class="card__name" id="arcade">Arcade</p>
+                                    <p class="card__name" id="arcade">PRETORIA CAMPUS</p>
                                     <p class="card__price">
-                                      $<span class="sbscription__price">00</span>/<span
+                                      <span class="sbscription__price"></span><span
                                         class="sbscription__duration"
-                                        >xx</span
+                                        ></span
                                       >
                                     </p>
-                                    <p class="yearly__benefit">2 months free</p>
+                                   
                                   </div>
                                 </div>
-                                <div class="plan__card card">
+                                <div class="plan__card card" data-campus-name="Soshanguve Campus">
                                   <div class="card__img">
-                                    <img src="./assets/images/icon-advanced.svg" alt="arcade" />
+                                    <img src="./images/TUT-Logo.png" alt="Soshanguve Campus" />
                                   </div>
                                   <div class="plan__price">
-                                    <p class="card__name" id="advance">Advance</p>
+                                    <p class="card__name" id="advance">SOSHANGUVE CAMPUS</p>
                                     <p class="card__price">
-                                      $<span class="sbscription__price">00</span>/<span
+                                      <span class="sbscription__price">00</span><span
                                         class="sbscription__duration"
                                         >xx</span
                                       >
                                     </p>
-                                    <p class="yearly__benefit">2 months free</p>
+                                    
                                   </div>
                                 </div>
-                                <div class="plan__card card">
+                                <div class="plan__card card" data-campus-name="Ga-Rankuwa Campus">
                                   <div class="card__img">
-                                    <img src="./assets/images/icon-pro.svg" alt="arcade" />
+                                    <img src="./images/TUT-Logo.png" alt="Ga-Rankuwa Campus" />
                                   </div>
                                   <div class="plan__price">
-                                    <p class="card__name" id="pro">Pro</p>
+                                    <p class="card__name" id="pro">GA-RANKUWA CAMPUS</p>
                                     <p class="card__price">
-                                      $<span class="sbscription__price">00</span>/<span
+                                      <span class="sbscription__price">00</span><span
                                         class="sbscription__duration"
                                         >xx</span
                                       >
                                     </p>
-                                    <p class="yearly__benefit">2 months free</p>
+                                    
+                                  </div>
+                                </div>
+                                <div class="plan__card card" data-campus-name="Arcadia Campus">
+                                  <div class="card__img">
+                                    <img src="./images/TUT-Logo.png" alt="Arcadia Campus" />
+                                  </div>
+                                  <div class="plan__price">
+                                    <p class="card__name" id="ar">ARCADIA CAMPUS</p>
+                                    <p class="card__price">
+                                      <span class="sbscription__price">00</span><span
+                                        class="sbscription__duration"
+                                        >xx</span
+                                      >
+                                    </p>
+                                    
+                                  </div>
+                                </div>
+                                <div class="plan__card card" data-campus-name="eMalahleni Campus">
+                                  <div class="card__img">
+                                    <img src="./images/TUT-Logo.png" alt="eMalahleni Campus" />
+                                  </div>
+                                  <div class="plan__price">
+                                    <p class="card__name" id="em">eMALAHLENI CAMPUS</p>
+                                    <p class="card__price">
+                                      <span class="sbscription__price">00</span><span
+                                        class="sbscription__duration"
+                                        >xx</span
+                                      >
+                                    </p>
+                                   
+                                  </div>
+                                </div>
+                                <div class="plan__card card" data-campus-name="Mbombela Campus">
+                                  <div class="card__img">
+                                    <img src="./images/TUT-Logo.png" alt="Mbombela Campus" />
+                                  </div>
+                                  <div class="plan__price">
+                                    <p class="card__name" id="mb">MBOMBELA CAMPUS</p>
+                                    <p class="card__price">
+                                      <span class="sbscription__price">00</span><span
+                                        class="sbscription__duration"
+                                        >xx</span
+                                      >
+                                    </p>
+                                    
+                                  </div>
+                                </div>
+                                <div class="plan__card card" data-campus-name="Polokwane Campus">
+                                  <div class="card__img">
+                                    <img src="./images/TUT-Logo.png" alt="Polokwane Campus" />
+                                  </div>
+                                  <div class="plan__price">
+                                    <p class="card__name" id="po">POLOKWANE CAMPUS</p>
+                                    <p class="card__price">
+                                      <span class="sbscription__price">00</span><span
+                                        class="sbscription__duration"
+                                        >xx</span
+                                      >
+                                    </p>
+                                    
                                   </div>
                                 </div>
                               </div>
                               <p id="select-plan-error"></p>
-                              <div class="toggle__container">
+                             <div class="toggle__container">
                                 <!-- "selected__plan" by default selected palan in monthly -->
-                                <p class="monthly__plan selected__plan" id="monthly">Monthly</p>
+                                
                                 <div class="toggle">
                                   <div class="toggle__circle" id="toggle"></div>
                                 </div>
-                                <p class="yearly__plan" id="yearly">Yearly</p>
+                                
                               </div>
+
                             </div>
                             <!-- STEP 3 -->
                             <div class="step" id="step-3">
@@ -410,110 +475,61 @@
                                 </div>
                               </div>
                             </div>
-                            <!-- STEP 4 -->
-                            <div class="step" id="step-4">
-                              <h3 class="main__title">Finishing up</h3>
-                              <p class="description">
-                                Double-check everything looks OK before confirming.
-                              </p>
-                              <div class="finishingup__card_container card">
-                                <div class="selected__plan_container">
-                                  <div class="" id="selected-plan"><!-- selected plan --></div>
-                                  <button class="change__plan" id="change-plan">change</button>
-                                </div>
-                                <ul id="selected-addon">
-                                  <!-- selected adds-on -->
-                                </ul>
-                              </div>
-                              <div class="total" id="total">
-                                <!-- total amount -->
-                              </div>
-                            </div>
-                            <!-- last step | thank you -->
-                            <div class="step last__step" id="thank-you">
-                              <div class="final__img">
-                                <img src="./assets/images/icon-thank-you.svg" alt="" />
-                              </div>
-                              <h3 class="main__title">Thank you!</h3>
-                              <p class="description">
-                                Thanks for confirming your subscription! We hope you have fun
-                                using our platform. If you ever need support, please feel free to
-                                email us at support@loremgaming.com.
-                              </p>
-                            </div>
+                          <!-- STEP 4 -->
+<div class="step" id="step-4">
+  <h3 class="main__title">Finishing up</h3>
+  <p class="description">
+      Double-check everything looks OK before confirming.
+  </p>
+  <div class="finishingup__card_container card">
+      <div class="selected__plan_container">
+          <button class="change__plan" id="change-plan">Edit Info</button>
+      </div>
+      <div id="selected-plan"></div>
+      <ul id="selected-addon"></ul>
+      <div id="personal-info"></div>
+  </div>
+  <div class="total" id="total"></div>
+</div>
 
-                          </div>
-                        </div>
-                                                    <!-- -------------- -->
-                            <!-- BUTTON -->
-                            <!-- -------------- -->
-                            <div class="button__container">
-                              <button class="button prev__button" id="prev-button">
-                                Go Back
-                              </button>
-                              <button type="submit" class="button next__button" id="next-button">
-                                Next Step
-                              </button>
-                            </div>
-                      </div> 
-                    
-                    
-              <!--end s-about__block -->
+<!-- Last step | Thank you -->
+<div class="step last__step" id="thank-you">
+  <div class="final__img">
+      <img src="./assets/images/icon-thank-you.svg" alt="" />
+  </div>
+  <h3 class="main__title">Thank you!</h3>
+  <p class="description">
+      Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.
+  </p>
+</div>
 
+<!-- BUTTON -->
+<div class="button__container">
+  <button class="button prev__button" id="prev-button">Go Back</button>
+  <button type="submit" class="button next__button" id="next-button">Next Step</button>
+</div>
+</div>
 
-              <!--end s-about__block -->
-            </div>
-            <!-- grid-list-items -->
-          </div>
-          <!--end column -->
-        </div>
-        <!--end s-about__content -->
-      </section>
-      <!-- end s-about -->  
+</section>
+<!-- end s-about -->
 
-      <!-- # footer 
-        ================================================== -->
-      <footer id="footer" class="s-footer target-section">
-        <!-- end section-footer__content -->
+<!-- Footer -->
 
-        <div class="row s-footer__buttons">
-          <div class="column xl-12 tab-12">
-            <a href="#0" class="btn btn--stroke btn--large u-fullwidth"
-              >Confirm Information</a
-            >
-          </div>
-        </div>
-        <!-- end section-footer__buttons -->
+<!-- end s-footer -->
+</div>
+<div class="ss-go-top">
+  <a class="smoothscroll" title="Back to Top" href="#top">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z"></path>
+      </svg>
+  </a>
+  <span>Back To Top</span>
+</div>
+<!-- end page-wrap -->
 
-
-        <!-- end section-footer__bottom -->
-
-        <div class="ss-go-top">
-          <a class="smoothscroll" title="Back to Top" href="#top">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              style="fill: rgba(0, 0, 0, 1); transform: ; msfilter: "
-            >
-              <path
-                d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z"
-              ></path>
-            </svg>
-          </a>
-          <span>Back To Top</span>
-        </div>
-        <!-- end ss-go-top -->
-      </footer>
-      <!-- end s-footer -->
-    </div>
-    <!-- end page-wrap -->
-
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/multiStepForm.js"></script>
-  </body>
+<!-- JavaScript -->
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="js/multiStepForm.js"></script>
+</body>
 </html>

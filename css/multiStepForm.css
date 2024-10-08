@@ -36,9 +36,9 @@
   body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
-    font-size: 1.6rem;    
+    font-size: 1.3rem;    
     position: relative;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;    
   }
   
   /* Inherit fonts for inputs and buttons */
@@ -59,7 +59,7 @@
   /* reduce font size for small screen */
   @media (max-width: 768px) {
     html {
-      font-size: 60%;
+      font-size: 75%;
     }
   }
   
@@ -118,7 +118,7 @@
   
   .subtitle {
     color: var(--Light-gray);
-    font-size: 1.4rem;
+    font-size: 2rem;
     font-weight: 400;
     padding-bottom: 2px;
   }
@@ -138,7 +138,7 @@
     color: var(--Marine-blue);
     font-weight: 700;
     text-transform: capitalize;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     margin-bottom: 2px;
   }
   
@@ -359,6 +359,25 @@
     height: 20px;
     margin-bottom: 5px;
   }
+
+  #personal-info{
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    color: rgb(88, 88, 88);    
+    align-self: center;
+    justify-content: space-between;    
+    font-size: 1.6rem;
+    font-weight: 500;
+  }  
+
+  .plan__card.selected {
+    border: 2px solid #007bff; /* Change this to your desired color */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  }
+  
   
   .plan__card_container {
     display: flex;
@@ -371,7 +390,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .plan__card > .card__img {
@@ -386,8 +405,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
-    background-color: var(--Magnolia);
+    height: 50px;    
     font-weight: 700;
     margin-bottom: 10px;
   }
@@ -401,8 +419,7 @@
     width: 40px;
     height: 20px;
     border-radius: 15px;
-    margin: 5px 0;
-    background-color: var(--Marine-blue);
+    margin: 5px 0;    
     display: flex;
     align-items: center;
     margin: 0 12px;
@@ -484,16 +501,18 @@
     background-color: var(--Marine-blue);
   }
   .next__button:hover {
+    color: white;
     transition: background 0.3s;
     background-color: var(--Purplish-blue);
   }
   .prev__button {
-    color: var(--Cool-gray);
-    background-color: var(--White);
-    padding: 0;
+    color: var(--Light-gray);
+    background-color: var(--Marine-blue);    
   }
   .prev__button:hover {
-    color: var(--Marine-blue);
+    color: white;
+    transition: background 0.3s;
+    background-color: var(--Purplish-blue);
   }
   
   @media (max-width: 768px) {
@@ -595,19 +614,18 @@
   
   /* selected plan */
   .selected__plan_container {
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding-top: 10px;    
   }
   
   /* change plan button */
   .change__plan {
-    border: none;
-    background-color: transparent;
+    border: none;    
     font-size: 1.9rem;
     color: var(--Cool-gray);
     text-decoration: underline;
     cursor: pointer;
-    transition: 0.25s;
+    transition: 0.5s;
+    
   }
   
   .change__plan:hover {

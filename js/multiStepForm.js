@@ -31,7 +31,7 @@ const selectedAddsOn = () => {
 };
 
 // plan prices
-const monthlyPlanPrices = [9, 12, 15];
+const monthlyPlanPrices = ['Tshwane University of Technology', 'Tshwane University of Technology', 'Tshwane University of Technology','Tshwane University of Technology','Tshwane University of Technology','Tshwane University of Technology','Tshwane University of Technology'];
 const yearlyPlanPrices = [90, 120, 150];
 const monthlyAdsOnPrice = [1, 2, 2];
 const yearlyAdsOnPrice = [10, 20, 20];
@@ -45,8 +45,8 @@ const setplan = (card, price, duration) => {
 };
 
 // set default price and duration of the cards
-setplan(planCards, monthlyPlanPrices, 'mo');
-setplan(addsonCards, monthlyAdsOnPrice, 'mo');
+setplan(planCards, monthlyPlanPrices, '');
+setplan(addsonCards, monthlyAdsOnPrice, '');
 
 // =====================
 // BUTTONS
@@ -162,11 +162,21 @@ const formValidation = () => {
   // check all inputs are valid using forEach loop
   formInput.forEach((input) => {
     // username
-    if (input.name === 'userName') {
+    if (input.name === 'stuNo') {
+        return input.value.length === 0
+          ? showError(input, 'Enter your student number')
+          : hideError(input);
+      }
+    if (input.name === 'firstName') {
       return input.value.length === 0
         ? showError(input, 'Enter your name')
         : hideError(input);
     }
+    if (input.name === 'lastName') {
+        return input.value.length === 0
+          ? showError(input, 'Enter your surname')
+          : hideError(input);
+      }
     // email
     if (input.name === 'email') {
       // verify email input value using regex
@@ -234,12 +244,12 @@ planCards.forEach((card) => {
     target.classList.add('selected');
 
     // store selected plan name, price and duration
-    let planName = target.querySelector('.card__name').textContent;
+   
     let planPrice = target.querySelector('.sbscription__price').textContent;
     let planDur = target.querySelector('.sbscription__duration').textContent;
 
     // add selected plan details to the selectedPlan object
-    return (selectedPlan = { planName, planPrice, planDur });
+    return (selectedPlan = {planPrice, planDur });
   });
 });
 
@@ -263,70 +273,89 @@ addsonCards.forEach((card) => {
 
 // STEP-4 | FINISHING UP
 
-// RENDER SELECTED PLAN, SELECTED ADD-ON AND TOTAL AMOUNT
-const renderTotal = () => {
-  // totalAmount to store total amount
-  let totalAmount = 0;
-  // plan duration in full-form [mo to montly or yr to yearly]
-  const planDuration = selectedPlan.planDur === 'mo' ? 'Monthly' : 'Yearly';
-  // selecte element to append selected plan. add-on and total price
-  const plan = document.getElementById('selected-plan');
-  const addsOnList = document.getElementById('selected-addon');
-  const total = document.getElementById('total');
+// RENDER SELECTED PLAN, SELECTED ADD-ON, TOTAL AMOUNT, AND PERSONAL INFO
 
-  // clear innerHTML of the selected elements
-  total.innerHTML = '';
-  addsOnList.innerHTML = '';
-  plan.innerHTML = '';
+let selectedCampusName = ""; // Variable to store selected campus name
 
-  // add selected plan
-  let planName = document.createElement('p');
-  planName.textContent = selectedPlan.planName;
+// Add event listeners to all campus cards
+document.querySelectorAll('.plan__card').forEach(card => {
+  card.addEventListener('click', function() {
+    // Get the campus name from data attribute
+    selectedCampusName = this.getAttribute('data-campus-name');
 
-  let dur = document.createElement('p');
-  dur.textContent = `(${planDuration})`;
+    // Optional: Add visual feedback for selection (e.g., highlight selected card)
+    document.querySelectorAll('.plan__card').forEach(c => c.classList.remove('selected'));
+    this.classList.add('selected');
 
-  let planPrice = document.createElement('p');
-  planPrice.textContent = `$${selectedPlan.planPrice}/${selectedPlan.planDur}`;
-  // append selected plan to the plan
-  plan.appendChild(planName);
-  plan.appendChild(dur);
-  plan.appendChild(planPrice);
-
-  // add selectedplan price in total amount
-  totalAmount += parseInt(selectedPlan.planPrice);
-
-  // add selected add-on in addsOnList
-  selectedAddsOn().forEach((item) => {
-    // create listItem to store selected add-on details
-    let listItem = document.createElement('li');
-    // addOnName to store add-on title
-    let addOnName = document.createElement('p');
-    addOnName.textContent = item.name;
-    // addOnprice for add-on price and plan duration
-    let addOnprice = document.createElement('p');
-    addOnprice.textContent = `+$${item.price}/${item.planDur}`;
-
-    // append  addOnName and addOnprice to the listItem
-    listItem.appendChild(addOnName);
-    listItem.appendChild(addOnprice);
-    // add list item to then addOnlist
-    addsOnList.appendChild(listItem);
-
-    // add price to the total price
-    totalAmount += parseInt(item.price);
+    // Update personal info display or perform other actions if necessary
+    renderTotal();
   });
-
-  // inner html for total
-  total.innerHTML = `<span>Total(
-    per ${planDuration.slice(0, -2).toLocaleLowerCase()}) </span> 
-      <span> $${totalAmount}/${selectedPlan.planDur}</span>`;
-};
-
-// function to handle change button
-changePlanBtn.addEventListener('click', () => {
-  // reassign stepNum to 0
-  stepNum = 0;
-  // show stepNum
-  showStep(stepNum);
 });
+
+const renderTotal = () => {
+    // totalAmount to store total amount
+    let totalAmount = 0;
+    // plan duration in full-form [mo to montly or yr to yearly]
+    const planDuration = selectedPlan.planDur === 'mo' ? 'Monthly' : '';
+  
+    // select elements to append selected plan, add-on, and total price
+    const plan = document.getElementById('selected-plan');
+    const addsOnList = document.getElementById('selected-addon');
+    const total = document.getElementById('total');
+  
+    // clear innerHTML of the selected elements
+    total.innerHTML = '';
+    addsOnList.innerHTML = '';
+    plan.innerHTML = '';
+  
+    // add selected plan
+
+    let dur = document.createElement('p');
+    dur.textContent = ``;
+  
+    let planPrice = document.createElement('p');
+    planPrice.textContent = ``;
+    // append selected plan to the plan
+ 
+    plan.appendChild(dur);
+    plan.appendChild(planPrice);
+  
+    // add selected plan price to total amount
+    totalAmount += parseInt(selectedPlan.planPrice);
+  
+    // add selected add-ons in addsOnList
+    selectedAddsOn().forEach((item) => {
+
+    });
+    
+  
+    // inner html for total
+    total.innerHTML = `<span></span> 
+        <span></span>`;
+  
+    // GRAB AND DISPLAY PERSONAL INFO
+    const studentNumber = document.querySelector('input[name="stuNo"]').value;
+    const firstName = document.querySelector('input[name="firstName"]').value;
+    const lastName = document.querySelector('input[name="lastName"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+  
+    // Display personal info below the selected plan or wherever required
+    const personalInfo = document.getElementById('personal-info');
+    personalInfo.innerHTML = `
+    <h3 class="personal-info-title">Personal Information</h3>
+    <p class="personal-info-item"><strong>Student Number:</strong> ${studentNumber}</p>
+    <p class="personal-info-item"><strong>First Name:</strong> ${firstName}</p>
+    <p class="personal-info-item"><strong>Last Name:</strong> ${lastName}</p>
+    <p class="personal-info-item"><strong>Email:</strong> ${email}</p>
+    <p class="personal-info-item"><strong>Selected Campus:</strong> ${selectedCampusName}</p>
+  `;
+  };
+  
+  // function to handle change button
+  changePlanBtn.addEventListener('click', () => {
+    // reassign stepNum to 0
+    stepNum = 0;
+    // show stepNum
+    showStep(stepNum);
+  });
+  
