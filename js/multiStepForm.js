@@ -77,12 +77,7 @@ nextBtn.addEventListener('click', (e) => {
     }
     stepNum++;
     showStep(stepNum);
-  } else if (stepNum === 2) {
-    // render list of selected plan and add-on with price
-    renderTotal();
-    stepNum++;
-    showStep(stepNum);
-  } else if (stepNum === 3) {
+  }  else if (stepNum === 2) {
     stepNum++;
     showStep(stepNum);
   } else return;
@@ -125,7 +120,7 @@ const showStep = (x) => {
       prevBtn.removeAttribute('disabled');
     }
     // change next step button inner text to 'confirm' on the step3
-    x === 3
+    x === 2
       ? (nextBtn.textContent = 'Confirm')
       : (nextBtn.textContent = 'Next step');
 
@@ -187,6 +182,16 @@ const formValidation = () => {
         ? showError(input, 'Enter valid email')
         : hideError(input);
     }
+
+        // linkedin
+        if (input.name === 'linkedin') {
+          // verify email input value using regex
+          const linkedinRegExp = new RegExp('^https?:\\/\\/?(www\\.)?linkedin\\.com\\/in\\/[a-zA-Z0-9-_]+$');          
+          return input.value.length === 0
+            ? showError(input, 'Enter a valid linkedin profile url')                     
+            : hideError(input);
+        }
+
     // phone number
     if (input.name === 'phone') {
       return input.value.length === 0
@@ -342,12 +347,14 @@ const renderTotal = () => {
     // Display personal info below the selected plan or wherever required
     const personalInfo = document.getElementById('personal-info');
     personalInfo.innerHTML = `
-    <h3 class="personal-info-title">Personal Information</h3>
+    <h3 class="personal-info-title">Personal Information Summary</h3>
     <p class="personal-info-item"><strong>Student Number:</strong> ${studentNumber}</p>
     <p class="personal-info-item"><strong>First Name:</strong> ${firstName}</p>
     <p class="personal-info-item"><strong>Last Name:</strong> ${lastName}</p>
     <p class="personal-info-item"><strong>Email:</strong> ${email}</p>
     <p class="personal-info-item"><strong>Selected Campus:</strong> ${selectedCampusName}</p>
+    <p class="personal-info-item"><strong>Selected Course:</strong> Computer Science (2024), Architecture (2027)</p>
+    <p class="personal-info-item"><strong>Selected Faculty:</strong> Information and Communication Technology (ICT), Engineering & the Built Environment.</p>
   `;
   };
   
